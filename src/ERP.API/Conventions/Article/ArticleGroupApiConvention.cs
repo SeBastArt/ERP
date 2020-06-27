@@ -1,0 +1,91 @@
+﻿using ERP.Domain.Responses;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+
+namespace ERP.API.Conventions
+{
+    /// <summary>
+    /// ArticleGroupApiConvention
+    /// </summary>
+    public static class ArticleGroupApiConvention
+    {
+        /// <summary>
+        /// Get
+        /// </summary>
+        /// <param name="id"></param>
+        [ProducesResponseType(typeof(ApiResult<ArticleGroupResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status404NotFound)]
+        [ApiConventionNameMatch(ApiConventionNameMatchBehavior.Prefix)]
+        public static void Get([ApiConventionNameMatch(ApiConventionNameMatchBehavior.Suffix),
+                                ApiConventionTypeMatch(ApiConventionTypeMatchBehavior.Any)]
+            object id)
+        {
+        }
+
+        /// <summary>
+        /// GetById
+        /// </summary>
+        /// <param name="id"></param>
+        [ProducesResponseType(typeof(ArticleGroupResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status404NotFound)]
+        [ApiConventionNameMatch(ApiConventionNameMatchBehavior.Prefix)]
+        public static void GetById([ApiConventionNameMatch(ApiConventionNameMatchBehavior.Suffix),
+                                    ApiConventionTypeMatch(ApiConventionTypeMatchBehavior.Any)]
+            object id)
+        {
+        }
+
+        /// <summary>
+        /// Create
+        /// </summary>
+        /// <param name="model"></param>
+        [ProducesResponseType(typeof(RespContainer<ArticleGroupResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status404NotFound)]
+        [ApiConventionNameMatch(ApiConventionNameMatchBehavior.Prefix)]
+        public static void Create([ApiConventionNameMatch(ApiConventionNameMatchBehavior.Any),
+                                   ApiConventionTypeMatch(ApiConventionTypeMatchBehavior.Any)]
+            object model)
+        {
+        }
+
+        /// <summary>
+        /// Update
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        [ProducesResponseType(typeof(RespContainer<ArticleGroupResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status404NotFound)]
+        [ApiConventionNameMatch(ApiConventionNameMatchBehavior.Prefix)]
+        public static void Update([ApiConventionNameMatch(ApiConventionNameMatchBehavior.Suffix),
+                                   ApiConventionTypeMatch(ApiConventionTypeMatchBehavior.Any)]
+            object id, [ApiConventionNameMatch(ApiConventionNameMatchBehavior.Any),
+                        ApiConventionTypeMatch(ApiConventionTypeMatchBehavior.Any)]
+            object model)
+        {
+        }
+
+        /// <summary>
+        /// Delete
+        /// </summary>
+        /// <param name="id"></param>
+        [ProducesResponseType(typeof(RespContainer<EmptyResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(typeof(RespContainer<JsonException>), StatusCodes.Status404NotFound)]
+        [ApiConventionNameMatch(ApiConventionNameMatchBehavior.Prefix)]
+        public static void Delete([ApiConventionNameMatch(ApiConventionNameMatchBehavior.Suffix),
+                                   ApiConventionTypeMatch(ApiConventionTypeMatchBehavior.Any)]
+            object id)
+        {
+        }
+    }
+}
